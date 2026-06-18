@@ -20,13 +20,13 @@ namespace Weather_System.Service
         private IJsonOnDeserialized jsonOnDeserialized;
         private Root_Model objectWheather;
 
-        public Root_Model GetData()
+        public Root_Model GetData(string city, string state)
         {
             try
             {
                 ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
                 RestClient cliente = new RestClient("https://api.hgbrasil.com/weather");
-                string requisicao = "https://api.hgbrasil.com/weather?city_name=Tramandai,RS&key=0a28cf98";
+                string requisicao = $"https://api.hgbrasil.com/weather?city_name={city},{state}&key=0a28cf98";
 
                 RestRequest request = new RestRequest(requisicao, Method.Get);
 

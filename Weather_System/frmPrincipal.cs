@@ -25,8 +25,8 @@ namespace Weather_System
             InitializeComponent();
             FillName();
             Application.DoEvents();
-            objectWeather = webService.GetData();
-            FillDataGrid();
+            //objectWeather = webService.GetData("Canoas","RS");
+            //FillDataGrid();
         }
 
         private void FillName()
@@ -35,15 +35,22 @@ namespace Weather_System
             txboxUser.Text = textInfo.ToTitleCase(Environment.UserName.Replace('.', ' '));
         }
 
-        private void FillDataGrid()
+        private void FillDataGrid(Root_Model objectJson)
         {
             try
             {
+                if (objectJson == null)
+                {
+                    MessageBox.Show("Houve um erro ao retornar os dados da API. Por favor, entre em contato com o suporte");
+                    dataGridView1.Rows?.Clear();
+                    return;
+                }
+
                 dataGridView1.Rows?.Clear();
 
-                foreach (Forecast_Model weather in objectWeather.results.forecast)
+                foreach (Forecast_Model weather in objectJson.results.forecast)
                 {
-                    dataGridView1.Rows.Add(weather.date,weather.min, weather.max, weather.description, weather.rain_probability);
+                    dataGridView1.Rows.Add(weather.date, weather.min, weather.max, weather.description, weather.rain_probability + "%");
                 }
 
                 dataGridView1.ClearSelection();
@@ -53,7 +60,7 @@ namespace Weather_System
 
                 throw;
             }
-            
+
         }
 
         #region Movimentar a janela
@@ -82,7 +89,33 @@ namespace Weather_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FillDataGrid();
+            try
+            {
+                string SelectedCity = cmBoxCity.SelectedItem?.ToString();
+
+                if (string.IsNullOrWhiteSpace(SelectedCity))
+                {
+                    dataGridView1.Rows?.Clear();
+                    return;
+                }
+
+
+                string[] dataSelected = SelectedCity.Split('-');
+
+                Root_Model json = webService.GetData(dataSelected[0], dataSelected[1]);
+                FillDataGrid(json);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+                
         }
     }
 }

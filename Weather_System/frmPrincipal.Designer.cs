@@ -28,43 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.cmBoxCity = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txboxUser = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.day = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.minTemperature = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maxTemperature = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rainProbabilty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txboxUser = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // cmBoxCity
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmBoxCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.cmBoxCity.FormattingEnabled = true;
+            this.cmBoxCity.Items.AddRange(new object[] {
             "",
             "Canoas - RS",
             "Tramandai - RS",
             "Caxias - RS",
             "Farroupilha - RS"});
-            this.comboBox1.Location = new System.Drawing.Point(387, 63);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(188, 23);
-            this.comboBox1.TabIndex = 11;
+            this.cmBoxCity.Location = new System.Drawing.Point(387, 63);
+            this.cmBoxCity.Name = "cmBoxCity";
+            this.cmBoxCity.Size = new System.Drawing.Size(188, 23);
+            this.cmBoxCity.TabIndex = 11;
             // 
             // label2
             // 
@@ -87,10 +88,47 @@
             this.maxTemperature,
             this.description,
             this.rainProbabilty});
-            this.dataGridView1.Location = new System.Drawing.Point(27, 101);
+            this.dataGridView1.Location = new System.Drawing.Point(27, 97);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(566, 235);
+            this.dataGridView1.Size = new System.Drawing.Size(548, 218);
             this.dataGridView1.TabIndex = 9;
+            // 
+            // day
+            // 
+            this.day.HeaderText = "Dia";
+            this.day.Name = "day";
+            // 
+            // minTemperature
+            // 
+            this.minTemperature.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minTemperature.DefaultCellStyle = dataGridViewCellStyle13;
+            this.minTemperature.HeaderText = "Temp° Min";
+            this.minTemperature.Name = "minTemperature";
+            // 
+            // maxTemperature
+            // 
+            this.maxTemperature.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maxTemperature.DefaultCellStyle = dataGridViewCellStyle14;
+            this.maxTemperature.HeaderText = "Temp° Max";
+            this.maxTemperature.Name = "maxTemperature";
+            // 
+            // description
+            // 
+            this.description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.description.DefaultCellStyle = dataGridViewCellStyle15;
+            this.description.HeaderText = "Descrição";
+            this.description.Name = "description";
+            // 
+            // rainProbabilty
+            // 
+            this.rainProbabilty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rainProbabilty.DefaultCellStyle = dataGridViewCellStyle16;
+            this.rainProbabilty.HeaderText = "Percent. Chuva";
+            this.rainProbabilty.Name = "rainProbabilty";
             // 
             // txboxUser
             // 
@@ -124,23 +162,6 @@
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MouseMovee);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MouseUpp);
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(88)))), ((int)(((byte)(140)))));
-            this.panel2.Location = new System.Drawing.Point(0, 372);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(652, 24);
-            this.panel2.TabIndex = 13;
-            // 
-            // panel3
-            // 
-            this.panel3.BackgroundImage = global::Weather_System.Properties.Resources.ExtensaoTitulo_1;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel3.Location = new System.Drawing.Point(-1, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(33, 36);
-            this.panel3.TabIndex = 14;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -152,42 +173,22 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "WEATHER SYSTEM";
             // 
-            // day
+            // panel3
             // 
-            this.day.HeaderText = "Dia";
-            this.day.Name = "day";
+            this.panel3.BackgroundImage = global::Weather_System.Properties.Resources.ExtensaoTitulo_1;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel3.Location = new System.Drawing.Point(-1, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(33, 36);
+            this.panel3.TabIndex = 14;
             // 
-            // minTemperature
+            // panel2
             // 
-            this.minTemperature.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minTemperature.DefaultCellStyle = dataGridViewCellStyle9;
-            this.minTemperature.HeaderText = "Temp° Min";
-            this.minTemperature.Name = "minTemperature";
-            // 
-            // maxTemperature
-            // 
-            this.maxTemperature.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maxTemperature.DefaultCellStyle = dataGridViewCellStyle10;
-            this.maxTemperature.HeaderText = "Temp° Max";
-            this.maxTemperature.Name = "maxTemperature";
-            // 
-            // description
-            // 
-            this.description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.description.DefaultCellStyle = dataGridViewCellStyle11;
-            this.description.HeaderText = "Descrição";
-            this.description.Name = "description";
-            // 
-            // rainProbabilty
-            // 
-            this.rainProbabilty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rainProbabilty.DefaultCellStyle = dataGridViewCellStyle12;
-            this.rainProbabilty.HeaderText = "Percent. Chuva";
-            this.rainProbabilty.Name = "rainProbabilty";
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(88)))), ((int)(((byte)(140)))));
+            this.panel2.Location = new System.Drawing.Point(0, 372);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(652, 24);
+            this.panel2.TabIndex = 13;
             // 
             // button1
             // 
@@ -199,16 +200,27 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(497, 332);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(47, 34);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "History";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(650, 395);
+            this.ClientSize = new System.Drawing.Size(651, 395);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmBoxCity);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txboxUser);
@@ -225,7 +237,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmBoxCity;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txboxUser;
@@ -240,5 +252,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn description;
         private System.Windows.Forms.DataGridViewTextBoxColumn rainProbabilty;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
