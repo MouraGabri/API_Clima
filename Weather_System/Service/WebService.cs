@@ -10,9 +10,6 @@ using System.Threading.Tasks;
 using Weather_System.Models;
 using static System.Net.WebRequestMethods;
 
-
-
-
 namespace Weather_System.Service
 {
     public class WebService

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Weather_System.Models;
+using Weather_System.Repositories;
 using Weather_System.Service;
 
 namespace Weather_System
@@ -19,6 +20,7 @@ namespace Weather_System
         Root_Model objectWeather;
         bool CliqueMouse;
         Point PontoClicado;
+        private Root_Model json;
 
         public frmPrincipal()
         {
@@ -46,6 +48,7 @@ namespace Weather_System
                     return;
                 }
 
+                json = objectJson;
                 dataGridView1.Rows?.Clear();
 
                 foreach (Forecast_Model weather in objectJson.results.forecast)
@@ -116,6 +119,13 @@ namespace Weather_System
         private void button2_Click(object sender, EventArgs e)
         {
                 
+        }
+
+        private void btnGravar_Click(object sender, EventArgs e)
+        {
+            Mongo mongo = new Mongo();
+
+            mongo.Insert(json);
         }
     }
 }
