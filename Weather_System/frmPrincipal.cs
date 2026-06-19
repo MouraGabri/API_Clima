@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -118,7 +119,7 @@ namespace Weather_System
 
         private void button2_Click(object sender, EventArgs e)
         {
-                
+
         }
 
         private void btnGravar_Click(object sender, EventArgs e)
@@ -127,6 +128,41 @@ namespace Weather_System
 
             mongo.Insert(json);
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string cidade = "Canoas, RS".Trim();
+                string scriptPath = @"C:\Users\gabriel.moura\Downloads\consultasDB.py";
+
+                ProcessStartInfo psi = new ProcessStartInfo();
+                psi.FileName = "python";
+                psi.Arguments = $"\"{scriptPath}\" \"{cidade}\"";
+                psi.RedirectStandardOutput = true;
+                psi.UseShellExecute = false;
+                psi.CreateNoWindow = true;
+
+                Process processo = Process.Start(psi);
+                string output = processo.StandardOutput.ReadToEnd();
+                processo.WaitForExit();
+
+                MessageBox.Show(output);
+
+                if (string.IsNullOrWhiteSpace(output)) return;
+
+
+                double mediaTemp = double.Parse(output, System.Globalization.CultureInfo.InvariantCulture);
+                label4.Text = $"Média de temperatura em {cidade}: {mediaTemp}°C";
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+        }
     }
 }
+
 #endregion
