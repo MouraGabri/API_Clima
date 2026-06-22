@@ -5,6 +5,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -119,8 +120,56 @@ namespace Weather_System
 
         private void button2_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string cidade = "Canoas, RS";
+                string scriptPath = @"C:\Users\gabriel.moura\Downloads\Img.py";
+                string imagemPath = @"C:\Users\gabriel.moura\Downloads\grafico.png";
 
+                var psi = new ProcessStartInfo
+                {
+                    FileName = "python",
+                    Arguments = $"\"{scriptPath}\" \"{cidade}\"",
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true, // 🔥 ESSENCIAL (mostra erros reais)
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                };
+
+                using (var processo = Process.Start(psi))
+                {
+                    string output = processo.StandardOutput.ReadToEnd();
+                    string error = processo.StandardError.ReadToEnd();
+
+                    processo.WaitForExit();
+
+                    output = output.Trim();
+                    error = error.Trim();
+
+                    // 🔥 DEBUG TOTAL (remove depois se quiser)
+                    MessageBox.Show($"OUTPUT:\n{output}\n\nERROR:\n{error}");
+
+                    // validação do Python
+                    if (output == "ok" && File.Exists(imagemPath))
+                    {
+                        // evita travamento de arquivo
+                        using (var img = Image.FromFile(imagemPath))
+                        {
+                            pictureBox1.Image = new Bitmap(img);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao gerar gráfico.\n\nOUTPUT: " + output + "\nERROR: " + error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro no C#: " + ex.Message);
+            }
         }
+        
 
         private void btnGravar_Click(object sender, EventArgs e)
         {
@@ -147,7 +196,6 @@ namespace Weather_System
                 string output = processo.StandardOutput.ReadToEnd();
                 processo.WaitForExit();
 
-                MessageBox.Show(output);
 
                 if (string.IsNullOrWhiteSpace(output)) return;
 
