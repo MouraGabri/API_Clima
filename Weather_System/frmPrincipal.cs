@@ -123,9 +123,10 @@ namespace Weather_System
             try
             {
                 string cidade = "Canoas, RS";
-                string scriptPath = @"C:\Users\gabriel.moura\Downloads\Img.py";
-                string imagemPath = @"C:\Users\gabriel.moura\Downloads\grafico.png";
-
+                string scriptPath = @"C:\Users\Sérgio\OneDrive\Desktop\Python_POO\grafico.py";
+                string imagemPath = @"C:\Temp\grafico.png";
+                // --- string scriptPath = @"C:\Users\gabriel.moura\Downloads\Img.py";
+                // =----- string imagemPath = @"C:\Users\gabriel.moura\Downloads\grafico.png";
                 var psi = new ProcessStartInfo
                 {
                     FileName = "python",
@@ -146,20 +147,20 @@ namespace Weather_System
                     output = output.Trim();
                     error = error.Trim();
 
-                    // 🔥 DEBUG TOTAL (remove depois se quiser)
-                    MessageBox.Show($"OUTPUT:\n{output}\n\nERROR:\n{error}");
-
                     // validação do Python
-                    if (output == "ok" && File.Exists(imagemPath))
-                    {
+                    // ----- if (output == "ok" && File.Exists(imagemPath))
+                    if (output.Contains("ok") && File.Exists(imagemPath)) {
                         // evita travamento de arquivo
                         using (var img = Image.FromFile(imagemPath))
                         {
+                            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                            pictureBox1.Size = new Size(500, 400);
                             pictureBox1.Image = new Bitmap(img);
                         }
                     }
                     else
                     {
+                        
                         MessageBox.Show("Erro ao gerar gráfico.\n\nOUTPUT: " + output + "\nERROR: " + error);
                     }
                 }
