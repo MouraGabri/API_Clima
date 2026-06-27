@@ -164,15 +164,10 @@ namespace Weather_System
                     error = error.Trim();
 
                     // validação do Python
-                    //if (output == "ok" && File.Exists(imagemPath))
+
                     if (output.Contains("ok") && File.Exists(imagemPath)) {
-                        // evita travamento de arquivo
-                        using (var img = Image.FromFile(imagemPath))
-                        {
-                            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-                            pictureBox1.Size = new Size(500, 400);
-                            pictureBox1.Image = new Bitmap(img);
-                        }
+                        Form2 telaGrafico = new Form2(imagemPath);
+                        telaGrafico.Show();
                     }
                     else
                     {
