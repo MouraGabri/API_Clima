@@ -29,6 +29,8 @@ namespace Weather_System
             InitializeComponent();
             FillName();
             Application.DoEvents();
+            button2.Enabled = false;
+            button3.Enabled = false;
             //objectWeather = webService.GetData("Canoas","RS");
             //FillDataGrid();
         }
@@ -105,10 +107,12 @@ namespace Weather_System
                 }
 
 
-                string[] dataSelected = SelectedCity.Split('-');
+                string[] dataSelected = SelectedCity.Split(',');
 
                 Root_Model json = webService.GetData(dataSelected[0], dataSelected[1]);
                 FillDataGrid(json);
+
+
             }
             catch (Exception)
             {
@@ -122,11 +126,22 @@ namespace Weather_System
         {
             try
             {
-                string cidade = "Canoas, RS";
+                string cidade = cmBoxCity.SelectedItem?.ToString();
+                //Farroupilha, RS
+
+                if (string.IsNullOrWhiteSpace(cidade))
+                {
+                    MessageBox.Show("Selecione uma cidade antes de gerar o gráfico.");
+                    return;
+                }
+
+
+
                 // Procura a pasta "Scripts" no diretório atual e em todos os diretórios
                 string pasta = Application.StartupPath;
 
-                while (!Directory.Exists(Path.Combine(pasta, "Scripts"))) {
+                while (!Directory.Exists(Path.Combine(pasta, "Scripts")))
+                {
                     var pai = Directory.GetParent(pasta);
 
                     if (pai == null)
@@ -142,7 +157,7 @@ namespace Weather_System
                 // na pasta Downloads local
 
                 string imagemPath = @"C:\Temp\grafico.png";
-    
+
                 var psi = new ProcessStartInfo
                 {
                     FileName = "python",
@@ -165,13 +180,14 @@ namespace Weather_System
 
                     // validação do Python
 
-                    if (output.Contains("ok") && File.Exists(imagemPath)) {
+                    if (output.Contains("ok") && File.Exists(imagemPath))
+                    {
                         Form2 telaGrafico = new Form2(imagemPath);
-                        telaGrafico.Show();
+                        telaGrafico.ShowDialog();
                     }
                     else
                     {
-                        
+
                         MessageBox.Show("Erro ao gerar gráfico.\n\nOUTPUT: " + output + "\nERROR: " + error);
                     }
                 }
@@ -183,18 +199,49 @@ namespace Weather_System
         }
         
 
+
         private void btnGravar_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("Não há dados para gravar. Por favor, selecione uma cidade e gere os dados antes de gravar.");
+                return;
+            }
+
+
+            string cidade = cmBoxCity.SelectedItem?.ToString();
+            //Farroupilha, RS
+
+            if (string.IsNullOrWhiteSpace(cidade))
+            {
+                MessageBox.Show("Selecione uma cidade antes de gravar as informações.");
+                return;
+            }
+
             Mongo mongo = new Mongo();
 
             mongo.Insert(json);
+            MessageBox.Show("Dados gravados com sucesso no MongoDB!");
+
+            if (dataGridView1.Rows.Count != 0)
+            {
+                button2.Enabled = true;
+                button3.Enabled = true;
+            }
+
+            else
+            {
+                button2.Enabled = false;
+                button3.Enabled = false;
+
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             try
             {
-                string cidade = "Canoas, RS".Trim();
+                string cidade = cmBoxCity.SelectedItem?.ToString(); 
                 string scriptPath = @"C:\Users\gabriel.moura\Downloads\consultasDB.py";
 
                 ProcessStartInfo psi = new ProcessStartInfo();

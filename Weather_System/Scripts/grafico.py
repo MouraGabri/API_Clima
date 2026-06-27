@@ -10,7 +10,7 @@ cidade = sys.argv[1]
 
 client = MongoClient("mongodb://localhost:27017/")
 db = client["api_tempo1"]
-collection = db["cidades"]
+collection = db["consultas_clima"]
 documento = collection.find_one({"results.city": cidade})
 
 if not documento:

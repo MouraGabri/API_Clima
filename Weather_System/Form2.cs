@@ -6,6 +6,8 @@ using System.Windows.Forms;
 namespace Weather_System {
     public partial class Form2 : Form {
         private string _imagemPath;
+        bool CliqueMouse;
+        Point PontoClicado;
 
         public Form2(string imagemPath) {
             InitializeComponent();
@@ -33,6 +35,28 @@ namespace Weather_System {
 
             if (File.Exists(_imagemPath))
                 File.Delete(_imagemPath);
+        }
+
+        private void MouseDownngrafico(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+                return;
+
+            CliqueMouse = true;
+            PontoClicado = e.Location;
+        }
+
+        private void MouseMoveegrafico(object sender, MouseEventArgs e)
+        {
+            if (CliqueMouse)
+            {
+                this.Location = new Point(Cursor.Position.X - PontoClicado.X, Cursor.Position.Y - PontoClicado.Y);
+            }
+        }
+
+        private void MouseUppgrafico(object sender, MouseEventArgs e)
+        {
+            CliqueMouse = false;
         }
     }
 }

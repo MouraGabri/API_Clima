@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cmBoxCity = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -50,10 +50,8 @@
             this.btnGravar = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // cmBoxCity
@@ -62,10 +60,10 @@
             this.cmBoxCity.FormattingEnabled = true;
             this.cmBoxCity.Items.AddRange(new object[] {
             "",
-            "Canoas - RS",
-            "Tramandai - RS",
-            "Caxias - RS",
-            "Farroupilha - RS"});
+            "Canoas, RS",
+            "Tramandaí, RS",
+            "Caxias, RS",
+            "Farroupilha, RS"});
             this.cmBoxCity.Location = new System.Drawing.Point(387, 63);
             this.cmBoxCity.Name = "cmBoxCity";
             this.cmBoxCity.Size = new System.Drawing.Size(188, 23);
@@ -94,7 +92,7 @@
             this.rainProbabilty});
             this.dataGridView1.Location = new System.Drawing.Point(27, 97);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(548, 218);
+            this.dataGridView1.Size = new System.Drawing.Size(611, 218);
             this.dataGridView1.TabIndex = 9;
             // 
             // day
@@ -105,32 +103,32 @@
             // minTemperature
             // 
             this.minTemperature.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minTemperature.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minTemperature.DefaultCellStyle = dataGridViewCellStyle1;
             this.minTemperature.HeaderText = "Temp° Min";
             this.minTemperature.Name = "minTemperature";
             // 
             // maxTemperature
             // 
             this.maxTemperature.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maxTemperature.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maxTemperature.DefaultCellStyle = dataGridViewCellStyle2;
             this.maxTemperature.HeaderText = "Temp° Max";
             this.maxTemperature.Name = "maxTemperature";
             // 
             // description
             // 
             this.description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.description.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.description.DefaultCellStyle = dataGridViewCellStyle3;
             this.description.HeaderText = "Descrição";
             this.description.Name = "description";
             // 
             // rainProbabilty
             // 
             this.rainProbabilty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rainProbabilty.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rainProbabilty.DefaultCellStyle = dataGridViewCellStyle4;
             this.rainProbabilty.HeaderText = "Percent. Chuva";
             this.rainProbabilty.Name = "rainProbabilty";
             // 
@@ -196,9 +194,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(497, 332);
+            this.button2.Location = new System.Drawing.Point(530, 332);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(47, 34);
+            this.button2.Size = new System.Drawing.Size(55, 34);
             this.button2.TabIndex = 15;
             this.button2.Text = "Imagem";
             this.button2.UseVisualStyleBackColor = true;
@@ -206,7 +204,7 @@
             // 
             // btnGravar
             // 
-            this.btnGravar.Location = new System.Drawing.Point(444, 332);
+            this.btnGravar.Location = new System.Drawing.Point(477, 332);
             this.btnGravar.Name = "btnGravar";
             this.btnGravar.Size = new System.Drawing.Size(47, 34);
             this.btnGravar.TabIndex = 16;
@@ -216,7 +214,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(550, 332);
+            this.button3.Location = new System.Drawing.Point(591, 332);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(47, 34);
             this.button3.TabIndex = 17;
@@ -232,21 +230,12 @@
             this.label4.Size = new System.Drawing.Size(0, 13);
             this.label4.TabIndex = 18;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(250, 229);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(651, 395);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnGravar);
@@ -264,7 +253,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,6 +278,5 @@
         private System.Windows.Forms.Button btnGravar;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
