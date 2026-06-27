@@ -123,7 +123,7 @@ namespace Weather_System
             try
             {
                 string cidade = "Canoas, RS";
-                // teste
+                // Procura a pasta "Scripts" no diretório atual e em todos os diretórios
                 string pasta = Application.StartupPath;
 
                 while (!Directory.Exists(Path.Combine(pasta, "Scripts"))) {
@@ -136,11 +136,13 @@ namespace Weather_System
                 }
 
                 string scriptPath = Path.Combine(pasta, "Scripts", "grafico.py");
-                // fim do teste
+
+                // após isso monta o caminho para usar de referência
+                // string scriptPath = @"C:\Users\gabriel.moura\Downloads\grafico.py"; Caso não funcione, rodar 
+                // na pasta Downloads local
 
                 string imagemPath = @"C:\Temp\grafico.png";
-                //string scriptPath = Path.Combine(Application.StartupPath,"Scripts", "grafico.py");
-                //@"C:\Users\gabriel.moura\Downloads\grafico.py";
+    
                 var psi = new ProcessStartInfo
                 {
                     FileName = "python",
