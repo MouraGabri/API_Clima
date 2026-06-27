@@ -123,11 +123,24 @@ namespace Weather_System
             try
             {
                 string cidade = "Canoas, RS";
-                string scriptPath = @"C:\Users\gabriel.moura\Downloads\grafico.py";
-                string imagemPath = @"C:\Temp\grafico.png";
-                //string scriptPath = @"C:\Users\Sérgio\OneDrive\Desktop\Python_POO\grafico.py";
-                //string imagemPath = @"C:\Temp\grafico.png";
+                // teste
+                string pasta = Application.StartupPath;
 
+                while (!Directory.Exists(Path.Combine(pasta, "Scripts"))) {
+                    var pai = Directory.GetParent(pasta);
+
+                    if (pai == null)
+                        throw new Exception("Pasta Scripts não encontrada.");
+
+                    pasta = pai.FullName;
+                }
+
+                string scriptPath = Path.Combine(pasta, "Scripts", "grafico.py");
+                // fim do teste
+
+                string imagemPath = @"C:\Temp\grafico.png";
+                //string scriptPath = Path.Combine(Application.StartupPath,"Scripts", "grafico.py");
+                //@"C:\Users\gabriel.moura\Downloads\grafico.py";
                 var psi = new ProcessStartInfo
                 {
                     FileName = "python",
