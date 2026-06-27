@@ -123,16 +123,17 @@ namespace Weather_System
             try
             {
                 string cidade = "Canoas, RS";
-                string scriptPath = @"C:\Users\Sérgio\OneDrive\Desktop\Python_POO\grafico.py";
+                string scriptPath = @"C:\Users\gabriel.moura\Downloads\grafico.py";
                 string imagemPath = @"C:\Temp\grafico.png";
-                // --- string scriptPath = @"C:\Users\gabriel.moura\Downloads\Img.py";
-                // =----- string imagemPath = @"C:\Users\gabriel.moura\Downloads\grafico.png";
+                //string scriptPath = @"C:\Users\Sérgio\OneDrive\Desktop\Python_POO\grafico.py";
+                //string imagemPath = @"C:\Temp\grafico.png";
+
                 var psi = new ProcessStartInfo
                 {
                     FileName = "python",
                     Arguments = $"\"{scriptPath}\" \"{cidade}\"",
                     RedirectStandardOutput = true,
-                    RedirectStandardError = true, // 🔥 ESSENCIAL (mostra erros reais)
+                    RedirectStandardError = true,
                     UseShellExecute = false,
                     CreateNoWindow = true
                 };
@@ -148,7 +149,7 @@ namespace Weather_System
                     error = error.Trim();
 
                     // validação do Python
-                    // ----- if (output == "ok" && File.Exists(imagemPath))
+                    //if (output == "ok" && File.Exists(imagemPath))
                     if (output.Contains("ok") && File.Exists(imagemPath)) {
                         // evita travamento de arquivo
                         using (var img = Image.FromFile(imagemPath))
