@@ -42,14 +42,14 @@
             this.rainProbabilty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txboxUser = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnGravar = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -151,29 +151,6 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Usuário:";
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(88)))), ((int)(((byte)(140)))));
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(0, -1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(652, 36);
-            this.panel1.TabIndex = 12;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDownn);
-            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MouseMovee);
-            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MouseUpp);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(3, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(132, 14);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "WEATHER SYSTEM";
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(88)))), ((int)(((byte)(140)))));
@@ -184,12 +161,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(591, 57);
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.Location = new System.Drawing.Point(581, 57);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(47, 34);
+            this.button1.Size = new System.Drawing.Size(48, 34);
             this.button1.TabIndex = 14;
-            this.button1.Text = "Load";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Text = "Buscar";
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
@@ -208,7 +186,7 @@
             this.btnGravar.Name = "btnGravar";
             this.btnGravar.Size = new System.Drawing.Size(47, 34);
             this.btnGravar.TabIndex = 16;
-            this.btnGravar.Text = "Gravar";
+            this.btnGravar.Text = "Salvar";
             this.btnGravar.UseVisualStyleBackColor = true;
             this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
             // 
@@ -229,6 +207,32 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(0, 13);
             this.label4.TabIndex = 18;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(88)))), ((int)(((byte)(140)))));
+            this.panel1.BackgroundImage = global::Weather_System.Properties.Resources.imagem_clima;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Location = new System.Drawing.Point(0, -1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(652, 52);
+            this.panel1.TabIndex = 12;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDownn);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MouseMovee);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MouseUpp);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("AdLib", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(247, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(148, 22);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Clima Local";
             // 
             // frmPrincipal
             // 
